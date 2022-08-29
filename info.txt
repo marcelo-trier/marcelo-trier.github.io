@@ -1,3 +1,5 @@
-Créditos e referências
+Créditos e referências:
 
 https://shields.io/
+
+https://www.alura.com.br/artigos/escrever-bom-readme
