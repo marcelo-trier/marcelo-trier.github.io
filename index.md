@@ -1,4 +1,9 @@
+---
+layout: default
+title: index
+---
+
 # Testeeee
 
-
-![my Badge dev](http://img.shields.io/static/v1?label=status&message=em%20desenv.&color=GREEN&style=for-the-badge)
+[![My Badge](https://img.shields.io/github/issues/marcelo-trier/marcelo-trier.github.io?label=issues)](https://github.com/marcelo-trier/marcelo-trier.github.io/issues)
+![my Badge dev](https://img.shields.io/static/v1?label=status&message=em%20desenv)
