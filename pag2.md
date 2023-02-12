@@ -1,10 +1,10 @@
 
 
-# Testeeee
-- teste de paginas do github..
-
 # Informações para desenvolvedores:
-- https://free-for.dev/#/
+- [free-for-devs](https://free-for.dev/)
+
+
+<br /> <br />
 
 # Tunelamento / conexão reversa:
 - localhost.run -- https://localhost.run/
