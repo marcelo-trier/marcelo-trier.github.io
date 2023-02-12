@@ -1,0 +1,56 @@
+
+<html>
+  <head>
+    <script src="http://www.skulpt.org/js/skulpt.min.js"></script>
+    <script src="http://www.skulpt.org/js/skulpt-stdlib.js"></script>
+  </head>
+
+  <body>
+    <h3>Try This</h3>
+    <form>
+      <textarea id="skulpt--input" cols="40" rows="10">
+import turtle
+
+t = turtle.Turtle()
+t.forward(100)
+
+print "Hello World" 
+</textarea
+      ><br />
+      <button type="button" onclick="skulptMain()">Run</button>
+    </form>
+    <pre id="skulpt--output"></pre>
+    <div id="skulpt-canvas--output"></div>
+    <script>
+      const inputRef = document.getElementById("skulpt--input");
+      const outputRef = document.getElementById("skulpt--output");
+
+      function skulptMain() {
+        outputRef.innerHTML = "";
+        Sk.configure({
+          output: (text) => {
+            outputRef.innerHTML = outputRef.innerHTML + text;
+          },
+          read: (file) => {
+            if (Sk.builtinFiles?.["files"][file] === undefined) {
+              throw `File not found: '${file}'`;
+            }
+            return Sk.builtinFiles["files"][file];
+          },
+        });
+
+        (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target =
+          "skulpt-canvas--output";
+
+        Sk.misceval
+          .asyncToPromise(() =>
+            Sk.importMainWithBody("<stdin>", false, inputRef.value, true)
+          )
+          .then(
+            (mod) => console.log("success"),
+            (err) => console.log(err.toString())
+          );
+      }
+    </script>
+  </body>
+</html>
