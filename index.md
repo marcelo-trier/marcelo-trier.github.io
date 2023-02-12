@@ -6,6 +6,7 @@ title: index
 # Página do Prof. Marcelo Pereira - IFPR Pinhais
 - Acesse a [tartaruga em python](/tartaruga-python.md).
 - Outro link para a [Tartaruga em python](https://marcelo-pereira-ifpr-edu-br.trinket.io/sites/algo).
+- Outro link para [Tartaruga](/teste.html)
 
 
 <br />
