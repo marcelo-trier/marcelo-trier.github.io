@@ -12,7 +12,6 @@
 
 <br><br> 
 
-<div class="embed-container">
 
 <iframe src="https://trinket.io/embed/python/0a7b28b56e" 
     width="100%" height="600" 
@@ -21,8 +20,6 @@
     marginheight="0" 
     allowfullscreen>
 </iframe>
-
-</div>
 
 
 <!--iframe src="https://marcelo-trier.github.io/repositoriooo" 
