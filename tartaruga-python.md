@@ -22,14 +22,6 @@
 </iframe>
 
 
-<!--iframe src="https://marcelo-trier.github.io/repositoriooo" 
-    width="100%" 
-    height="400" 
-    frameborder="0" 
-    scrolling="no">
-</iframe-->
-
-
 <!--style>
 .embed-container {
   position: relative;
