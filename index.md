@@ -4,9 +4,10 @@ title: index
 ---
 
 # Página do Prof. Marcelo Pereira - IFPR Pinhais
-    - Aulas de Programação:
-        -- Acesse a [Tartaruga em python](https://trinket.io/embed/python/0a7b28b56e)
-        -- (outro provedor, mas o mesmo código: [tartaruga-replit](https://replit.com/@mtrier77/myturtle#main.py))
+
+- Material de Apoio para aulas de AlgoritmoS!
+    - Acesse a [Tartaruga em python](https://trinket.io/embed/python/0a7b28b56e)
+    - (outro provedor, mas o mesmo código: [tartaruga-replit](https://replit.com/@mtrier77/myturtle#main.py))
 
 <br />
 
