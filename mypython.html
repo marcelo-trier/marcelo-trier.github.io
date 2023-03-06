@@ -1,0 +1,256 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Python Sandbox | Turtle Mode</title>
+    <link rel="icon" type="image/png" href="https://pythonsandbox.com/images/logo_python_no-text.png">
+    <!-- Bootstrap & Other CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link media="all" type="text/css" rel="stylesheet"
+        href="https://www.pythonsandbox.com/css/bootstrap.superhero.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="https://www.pythonsandbox.com/css/codemirror.css">
+    <!-- <link rel="stylesheet" href="./css/codemirror.css"> -->
+    <link media="all" type="text/css" rel="stylesheet" href="https://www.pythonsandbox.com/css/base16-dark.css">
+    <!-- <link rel="stylesheet" href="./css/base16-dark.css"> -->
+    <link media="all" type="text/css" rel="stylesheet" href="https://www.pythonsandbox.com/css/sandbox.css">
+    <!-- <link rel="stylesheet" href="./css/sandbox.css"> -->
+    <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://www.pythonsandbox.com/js/codemirror-custom.js"></script>
+    <script src="https://www.pythonsandbox.com/js/skulpt.min.js"></script>
+    <script src="https://www.pythonsandbox.com/js/codemirror-custom.js"></script>
+    <script src="https://www.pythonsandbox.com/js/skulpt-stdlib.js"></script>
+    <script src="https://www.pythonsandbox.com/js/sandbox.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+</head>
+<body>
+    <div class="page-content">
+        <div class="page-header">
+            <form method="POST" action="https://www.pythonsandbox.com/code" accept-charset="UTF-8">
+                <input name="_token" type="hidden" value="ohGVTULOEU9umgLahSIsl3fgQS40WIkQAcW2DN41">
+                <input name="mode" type="hidden" value="turtle">
+                <input name="save-as-next" type="hidden" value="0">
+                <input name="save-as-last" type="hidden" value="0">
+                <input name="save-as-new" type="hidden" value="0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p></p>
+                            <div class="alert alert-success">
+                                <p><strong>Turtle Mode!</strong></p>Type your turtle code in the editor window. When
+                                finished, press the play button to run your code.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6 window-container">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <p class="lead">Editor Window</p>
+                                    <textarea id="sandbox" style="display: none;">
+import turtle
+t = turtle.Turtle()
+t.speed(5) 
+t.forward(100)
+                                    </textarea>
+                                </div>
+                                <div class="col-xs-12 button-row">
+                                    <button type="button" class="btn btn-success runner"><span
+                                            class="glyphicon glyphicon-play"></span></button>
+                                    <button type="button" class="btn btn-default btn-submit"><span
+                                            class="glyphicon glyphicon-floppy-disk"></span></button>
+                                    <div class="pull-right">
+                                        <button type="button" class="btn wrapper btn-default" data-wrap="false"
+                                            title="Line Wrapping Toggle"><span
+                                                class="glyphicon glyphicon-eye-close"></span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 window-container">
+                            <div class="col-xs-12">
+                                <p class="lead">Turtle Window</p>
+                                <div id="canvas"></div>
+                                <pre class="hidden no-show" id="output"></pre>
+                            </div>
+                            <div class="col-xs-12 control-row">
+                                <div class="pull-left">
+                                    <div class="button-group">
+                                        <button type="button" class="btn animate-control btn-success" data-status="on"
+                                            title="Toggle Animation of Turtle">Animate</button>
+                                    </div>
+                                </div>
+                                <div class="pull-right">
+                                    <a class="btn btn-success btn-picture" title="Download canvas as image"
+                                        style="display: none;"><span class="glyphicon glyphicon-picture"></span></a>
+                                    <button type="button" class="btn btn-danger killer" style="display: none;"><span
+                                            class="glyphicon glyphicon-stop"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="modal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">×</span></button>
+                        <h4 class="modal-title">Ooops...</h4>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <div id="modal-checking" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Please wait...</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-warning">We're checking the status of your current file. This should only take a
+                            few seconds.</p>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <div id="modal-error" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">×</span></button>
+                        <h4 class="modal-title">Uh oh...</h4>
+                    </div>
+                    <div class="modal-body">
+                        Sorry, an error occurred when talking to our server. Please try to save again later.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </div>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+    <script src="https://www.pythonsandbox.com/js/sandbox-saving.js"></script>
+    <script>
+        (function ($) {
+            $(document).ready(function () {
+                $('.btn-picture').removeClass('hidden').hide();
+                var ps = new PythonSandbox({
+                    codeSourceId: 'sandbox',
+                    codeDisplayId: 'output',
+                    turtleCanvasId: 'canvas',
+                    codeMirrorId: 'mirror',
+                    logToConsole: false,
+                    errorHandler: function (txt) { myCustomErrorHandler(txt); }
+                });
+                $('.killer').hide().removeClass('hidden');
+                $('.runner').click(function () {
+                    removeImageDownloadOption();
+                    $('.killer').show();
+                    ps.execute();
+                    setTimeout(checkCanvasVisibility, 1000);
+                });
+                $('.killer').click(function () {
+                    ps.killTurtle();
+                    removeImageDownloadOption();
+                    // $('.killer').hide();
+                });
+                $('.wrapper').click(function () {
+                    var wrapping = $(this).data('wrap') || $(this).data('wrap') == 'true';
+                    ps.toggleWrapping(!wrapping);
+                    $(this).data('wrap', !wrapping);
+                    $(this).toggleClass('btn-danger btn-default');
+                });
+                $('.btn-picture').click(function (e) {
+                    var filename = $('input[name="filename"]').val() ? $('input[name="filename"]').val().replace('.py', '.png') : 'pythonsandbox-canvas.png';
+                    // var canvas = $('#sandboxCanvas').get(0);
+                    var canvas = findTurtleCanvas();
+                    var img = canvas.toDataURL('image/png');
+                    $(this).attr({
+                        'download': filename,
+                        'href': img
+                    });
+                });
+                function removeImageDownloadOption() {
+                    $('.btn-picture').hide();
+                }
+                function checkCanvasVisibility() {
+                    var turtleCanvas = findTurtleCanvas();
+                    if (turtleCanvas)
+                        $('.btn-picture').show();
+                    else
+                        $('.btn-picture').hide();
+                }
+                function findTurtleCanvas() {
+                    var canvas = $('#canvas').find('canvas');
+                    if (canvas.length && canvas.length > 1)
+                        return canvas.get(1);
+                    else
+                        return false;
+                }
+                $('.animate-control').click(function () {
+                    if ($(this).data('status') == 'on') {
+                        ps.animate(false);
+                        $(this).data('status', 'off');
+                    }
+                    else {
+                        ps.animate(true);
+                        $(this).data('status', 'on');
+                    }
+                    $(this).toggleClass('btn-success btn-default');
+                });
+                function myCustomErrorHandler(txt) {
+                    $('#modal .modal-body').html(txt);
+                    $('#modal').modal('show');
+                    highlightLineOnEditor(txt);
+                }
+                function highlightLineOnEditor(txt) {
+                    var line = determineLineNumberFromError(txt);
+                    if (!line)
+                        return;
+                    var editor = ps.getEditor();
+                    line--; //-- actual line numbers start at 0
+                    var contents = editor.getLine(line);
+                    console.log(contents);
+                    $('#modal').on('hidden.bs.modal', function (e) {
+                        editor.setSelection({ line: line, ch: 0 }, { line: line, ch: contents.length });
+                    });
+                }
+                function determineLineNumberFromError(txt) {
+                    // var regex = /^[.\s]+\sline\s(\d+)$/
+                    var regex = /line\s(\d+)/
+                    var match = txt.match(regex);
+                    return match ? match[1] : false;
+                }
+            });
+        })(jQuery);
+    </script>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-center">© 2023 Ken H. Burres III | Powered by Digital Ocean.</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
