@@ -6,8 +6,10 @@ title: index
 # Página do Prof. Marcelo Pereira - IFPR Pinhais
 
 - Material de Apoio para aulas de AlgoritmoS!
-    - Acesse a [Tartaruga em python](https://trinket.io/embed/python/0a7b28b56e)
-    - (outro provedor, mas o mesmo código: [tartaruga-replit](https://replit.com/@mtrier77/myturtle#main.py))
+    - Acesse no GoogleColab [Tartaruga no Colab](https://colab.research.google.com/gist/marcelo-trier/5412bc215569b599f799170ea6cbcecf/turtle.ipynb)
+    - Acesse no Tinket [Tartaruga em python](https://trinket.io/embed/python/0a7b28b56e)
+    - Acesse no Replit [tartaruga-replit](https://replit.com/@mtrier77/myturtle#main.py)
+    - Acesse no Sandbox [ Tartaruga-sandbox](https://www.pythonsandbox.com/turtle)
 
 <br />
 
